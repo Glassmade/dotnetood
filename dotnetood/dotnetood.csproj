@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1848201-079E-4496-8240-B5EE95259552}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>dotnetood</RootNamespace>
+    <AssemblyName>dotnetood</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileManager.cs" />
+    <Compile Include="MyGenericSerialization.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MySerialization.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bank\Bank.csproj">
+      <Project>{1e13ba05-7749-4b69-8594-001e7ac9c616}</Project>
+      <Name>Bank</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BetterBank.Tests\BetterBank.Tests.csproj">
+      <Project>{1c862b8b-c683-4de8-a3c4-f8098b730e50}</Project>
+      <Name>BetterBank.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BetterBank\BetterBank.csproj">
+      <Project>{613899a0-50af-449c-ab6f-5dab12c0567f}</Project>
+      <Name>BetterBank</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CollectionsExamples\CollectionsExamples.csproj">
+      <Project>{d6e483de-f4b5-4116-bdeb-387ea3dae580}</Project>
+      <Name>CollectionsExamples</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnumExample\EnumExample.csproj">
+      <Project>{25ca1224-7f2a-4326-8643-fa16828bd9e4}</Project>
+      <Name>EnumExample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExceptionHandling\ExceptionHandling.csproj">
+      <Project>{1e12f861-7e8b-4c16-ba2f-46ce1f875a77}</Project>
+      <Name>ExceptionHandling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FizzBuzz.Tests\FizzBuzz.Tests.csproj">
+      <Project>{fc6779c1-5745-435d-8785-94ff9b1717ac}</Project>
+      <Name>FizzBuzz.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FizzBuzz\FizzBuzz.csproj">
+      <Project>{133ba7ae-c775-4ed8-ba43-ed8fd50fa198}</Project>
+      <Name>FizzBuzz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PassingArguments\PassingArguments.csproj">
+      <Project>{071cb131-39c0-467e-8536-b7676878fa92}</Project>
+      <Name>PassingArguments</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
